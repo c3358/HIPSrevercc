@@ -56,12 +56,94 @@ public:
 
 		}
 		CloseHandle(hFile);
+
+
+		::MessageBox(GetHWND(), TEXT("开始加载驱动保护！"), NULL, MB_OK);
+
+		//启动驱动程序
+		//LoadNTDriver(TEXT("HIPS360HookPort"), (char*)((LPCTSTR)(CPaintManagerUI::GetInstancePath() + TEXT("HookPort.sys"))));
+		
+		if (LoadNTDriver(TEXT("HIPHookProtect"), (char*)((LPCTSTR)(CPaintManagerUI::GetInstancePath() + TEXT("HIPHookProtect.sys")))))
+		{
+			//设置自我保护PID
+			DWORD dwRetLeng = 0;
+			BYTE bInBuffer[0x10] = { 0 };
+			BYTE bOutBuffer[0x10] = { 0 };
+			*((DWORD*)bInBuffer) = GetCurrentProcessId();
+			HANDLE hDevice = CreateFile(TEXT("\\\\.\\HIPHookProtect"), GENERIC_READ | GENERIC_WRITE, 0, 0, OPEN_EXISTING, FILE_ATTRIBUTE_SYSTEM, 0);
+			if (hDevice != INVALID_HANDLE_VALUE)
+			{
+				DeviceIoControl(
+					hDevice,
+					IOCTL_SETOURSELFPID,
+					bInBuffer, 4,
+					&bOutBuffer, 0,
+					&dwRetLeng, NULL);
+					
+				CloseHandle(hDevice);
+
+			}
+
+		}
+		else
+			::MessageBox(GetHWND(), TEXT("驱动加载失败"), NULL, MB_OK);
+	
+		
+
+
 	}
 
 	void OnPrepare() {
 	}
 
 
+	//加载驱动程序
+	BOOL LoadNTDriver(char* lpszDriverName, char* lpszDriverPath)
+	{
+		char szDriverImagePath[256];
+		//得到完整的驱动路径
+		GetFullPathName(lpszDriverPath, 256, szDriverImagePath, NULL);
+		BOOL bRet = FALSE;
+		SC_HANDLE hServiceMgr = NULL;//SCM管理器的句柄
+		SC_HANDLE hServiceDDK = NULL;//NT驱动程序的服务句柄
+		//打开服务控制管理器
+		hServiceMgr = OpenSCManager(NULL, NULL, SC_MANAGER_ALL_ACCESS);
+		if (hServiceMgr == NULL)
+		{
+			//OpenSCManager失败
+			bRet = FALSE;
+			goto BeforeLeave;
+		}
+		//创建驱动所对应的服务
+		hServiceDDK = CreateService(hServiceMgr,
+			lpszDriverName, //驱动程序的在注册表中的名字
+			lpszDriverName, // 注册表驱动程序的 DisplayName 值
+			SERVICE_ALL_ACCESS, // 加载驱动程序的访问权限
+			SERVICE_KERNEL_DRIVER,// 表示加载的服务是驱动程序
+			SERVICE_DEMAND_START, // 注册表驱动程序的 Start 值
+			SERVICE_ERROR_IGNORE, // 注册表驱动程序的 ErrorControl 值
+			szDriverImagePath, // 注册表驱动程序的 ImagePath 值
+			NULL,
+			NULL,
+			NULL,
+			NULL,
+			NULL);
+		DWORD dwRtn;
+	
+		//开启此项服务
+		bRet = StartService(hServiceDDK, NULL, NULL);
+		//离开前关闭句柄
+	BeforeLeave:
+		if (hServiceDDK)
+		{
+			CloseServiceHandle(hServiceDDK);
+		}
+		if (hServiceMgr)
+		{
+			CloseServiceHandle(hServiceMgr);
+		}
+		return bRet;
+	}
 
 	//控件事件通知例程
 	void Notify(TNotifyUI& msg)
@@ -287,7 +369,7 @@ int SafeFrameWnd::ShowLog()
 {
 	DWORD dwThreadId = NULL;
 	HANDLE dwThreadHandle = NULL;
-	dwThreadHandle = CreateThread(NULL, NULL, _FileLogThread, &m_pm, NULL, &dwThreadId);
+	dwThreadHandle = CreateThread(NULL, NULL, _ProtectLogThread, &m_pm, NULL, &dwThreadId);
 	if (!dwThreadHandle)
 	{
 		return FALSE;

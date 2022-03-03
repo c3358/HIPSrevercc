@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|ARM">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM">
+      <Configuration>Release</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|ARM64">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM64">
+      <Configuration>Release</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{FBAD6862-15A3-4C25-9758-FFAF54B9F034}</ProjectGuid>
+    <TemplateGuid>{dd38f7fc-d7bd-488b-9242-7d8754cde80d}</TemplateGuid>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MinimumVisualStudioVersion>12.0</MinimumVisualStudioVersion>
+    <Configuration>Debug</Configuration>
+    <Platform Condition="'$(Platform)' == ''">Win32</Platform>
+    <RootNamespace>HIPHookProtect</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <TargetVersion>Windows10</TargetVersion>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>WindowsKernelModeDriver10.0</PlatformToolset>
+    <ConfigurationType>Driver</ConfigurationType>
+    <DriverType>WDM</DriverType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <TargetVersion>Windows7</TargetVersion>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>WindowsKernelModeDriver10.0</PlatformToolset>
+    <ConfigurationType>Driver</ConfigurationType>
+    <DriverType>WDM</DriverType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <TargetVersion>Windows10</TargetVersion>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>WindowsKernelModeDriver10.0</PlatformToolset>
+    <ConfigurationType>Driver</ConfigurationType>
+    <DriverType>WDM</DriverType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <TargetVersion>Windows10</TargetVersion>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>WindowsKernelModeDriver10.0</PlatformToolset>
+    <ConfigurationType>Driver</ConfigurationType>
+    <DriverType>WDM</DriverType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
+    <TargetVersion>Windows10</TargetVersion>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>WindowsKernelModeDriver10.0</PlatformToolset>
+    <ConfigurationType>Driver</ConfigurationType>
+    <DriverType>WDM</DriverType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="Configuration">
+    <TargetVersion>Windows10</TargetVersion>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>WindowsKernelModeDriver10.0</PlatformToolset>
+    <ConfigurationType>Driver</ConfigurationType>
+    <DriverType>WDM</DriverType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'" Label="Configuration">
+    <TargetVersion>Windows10</TargetVersion>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>WindowsKernelModeDriver10.0</PlatformToolset>
+    <ConfigurationType>Driver</ConfigurationType>
+    <DriverType>WDM</DriverType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'" Label="Configuration">
+    <TargetVersion>Windows10</TargetVersion>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>WindowsKernelModeDriver10.0</PlatformToolset>
+    <ConfigurationType>Driver</ConfigurationType>
+    <DriverType>WDM</DriverType>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+    <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+    <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <Optimization>Disabled</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Neither</FavorSizeOrSpeed>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <FilesToPackage Include="$(TargetPath)" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Command.c" />
+    <ClCompile Include="CurrencyFunc.c" />
+    <ClCompile Include="DoFake.c" />
+    <ClCompile Include="Fake_CreateProcessNotifyRoutine.c" />
+    <ClCompile Include="Fake_ZwCreateFile.c" />
+    <ClCompile Include="Fake_ZwDeleteFile.c" />
+    <ClCompile Include="Fake_ZwDeleteKey.c" />
+    <ClCompile Include="Fake_ZwDeviceIoControlFile.c" />
+    <ClCompile Include="Fake_ZwOpenFile.c" />
+    <ClCompile Include="Fake_ZwOpenKey.c" />
+    <ClCompile Include="Fake_ZwOpenKeyEx.c" />
+    <ClCompile Include="Fake_ZwOpenProcess.c" />
+    <ClCompile Include="Fake_ZwReadFile.c" />
+    <ClCompile Include="Fake_ZwSetInformationFile.c" />
+    <ClCompile Include="Fake_ZwTerminateProcess.c" />
+    <ClCompile Include="Fake_ZwWriteFile.c" />
+    <ClCompile Include="Filter_CreateProcessNotifyRoutine.c" />
+    <ClCompile Include="Filter_ZwCreateFile.c" />
+    <ClCompile Include="Filter_ZwDeleteFile.c" />
+    <ClCompile Include="Filter_ZwDeleteKey.c" />
+    <ClCompile Include="Filter_ZwDeviceIoControlFile.c" />
+    <ClCompile Include="Filter_ZwOpenKey.c" />
+    <ClCompile Include="Filter_ZwOpenKeyEx.c" />
+    <ClCompile Include="Filter_ZwOpenProcess.c" />
+    <ClCompile Include="Filter_ZwReadFile.c" />
+    <ClCompile Include="Filter_ZwTerminateProcess.c" />
+    <ClCompile Include="Filter_ZwWriteFIle.c" />
+    <ClCompile Include="Filter_ZwOpenFile.c" />
+    <ClCompile Include="HookProtect.c" />
+    <ClCompile Include="Ssdt.c" />
+    <ClCompile Include="WhiteFileList.c" />
+    <ClCompile Include="WhiteProcessList.c" />
+    <ClCompile Include="WhiteRegditList.c" />
+    <ClCompile Include="Filter_ZwSetInformationFile.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Command.h" />
+    <ClInclude Include="CurrencyFunc.h" />
+    <ClInclude Include="data.h" />
+    <ClInclude Include="defstruct.h" />
+    <ClInclude Include="DoFake.h" />
+    <ClInclude Include="Fake_CreateProcessNotifyRoutine.h" />
+    <ClInclude Include="Fake_ZwCreateFile.h" />
+    <ClInclude Include="Fake_ZwDeleteFile.h" />
+    <ClInclude Include="Fake_ZwDeleteKey.h" />
+    <ClInclude Include="Fake_ZwDeviceIoControlFile.h" />
+    <ClInclude Include="Fake_ZwOpenFile.h" />
+    <ClInclude Include="Fake_ZwOpenKey.h" />
+    <ClInclude Include="Fake_ZwOpenKeyEx.h" />
+    <ClInclude Include="Fake_ZwOpenProcess.h" />
+    <ClInclude Include="Fake_ZwReadFile.h" />
+    <ClInclude Include="Fake_ZwSetInformationFile.h" />
+    <ClInclude Include="Fake_ZwTerminateProcess.h" />
+    <ClInclude Include="Fake_ZwWriteFile.h" />
+    <ClInclude Include="Filter_CreateProcessNotifyRoutine.h" />
+    <ClInclude Include="Filter_ZwCreateFile.h" />
+    <ClInclude Include="Filter_ZwDeleteFile.h" />
+    <ClInclude Include="Filter_ZwDeleteKey.h" />
+    <ClInclude Include="Filter_ZwDeviceIoControlFile.h" />
+    <ClInclude Include="Filter_ZwOpenKey.h" />
+    <ClInclude Include="Filter_ZwOpenKeyEx.h" />
+    <ClInclude Include="Filter_ZwOpenProcess.h" />
+    <ClInclude Include="Filter_ZwReadFile.h" />
+    <ClInclude Include="Filter_ZwSetInformationFile.h" />
+    <ClInclude Include="Filter_ZwTerminateProcess.h" />
+    <ClInclude Include="Filter_ZwWriteFile.h" />
+    <ClInclude Include="Filter_ZwOpenFile.h" />
+    <ClInclude Include="HookProtect.h" />
+    <ClInclude Include="Ssdt.h" />
+    <ClInclude Include="WhiteFileList.h" />
+    <ClInclude Include="WhiteProcessList.h" />
+    <ClInclude Include="WhiteRegditList.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

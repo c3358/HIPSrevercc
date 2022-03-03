@@ -76,7 +76,7 @@ void AddRuleWnd::OnAddRuleButton()
 
 
 	//获取驱动句柄
-	HANDLE hDevice = CreateFile(TEXT("\\\\.\\360SelfProtection"), GENERIC_READ | GENERIC_WRITE, 0, 0, OPEN_EXISTING, FILE_ATTRIBUTE_SYSTEM, 0);
+	HANDLE hDevice = CreateFile(TEXT("\\\\.\\HIPHookProtect"), GENERIC_READ | GENERIC_WRITE, 0, 0, OPEN_EXISTING, FILE_ATTRIBUTE_SYSTEM, 0);
 	if (hDevice == INVALID_HANDLE_VALUE)
 	{
 		return;
@@ -106,6 +106,21 @@ void AddRuleWnd::OnAddRuleButton()
 			IOCTL_SETPROCESSWHITE,
 			&dwPid,
 			0x4,
+			bOutBuffer, 0x4,
+			&dwRetLeng, NULL)
+			|| *(DWORD*)bOutBuffer == 0)
+		{
+			CloseHandle(hDevice);
+			return;
+		}
+	}
+	else if (!strncmp(szRuleName, "3", 1))					//添加注册表保护列表
+	{
+		if (!DeviceIoControl(
+			hDevice,
+			IOCTL_SETPROTECTREGDIT,
+			(LPVOID)szTargetName.GetData(),
+			szTargetName.GetLength(),
 			bOutBuffer, 0x4,
 			&dwRetLeng, NULL)
 			|| *(DWORD*)bOutBuffer == 0)

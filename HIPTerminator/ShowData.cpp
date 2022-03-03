@@ -19,16 +19,23 @@ _INTERCEPT_PROCESS g_InterceptProcessData = { 0 };
 typedef  DWORD(WINAPI* SUSPENDPROCESS)(HANDLE);
 typedef  DWORD(WINAPI* RESUMEPROCESS)(HANDLE);
 
-//文件防护日志
-DWORD WINAPI _FileLogThread(LPVOID lpParam)
+//文件,注册表，网络防护日志
+DWORD WINAPI _ProtectLogThread(LPVOID lpParam)
 {
 	DWORD dwReadOfNum = 0;
 	OVERLAPPED stOverlapped = { 0 };
 	OVERLAPPED stOverlappedTo = { 0 };
 	BYTE szBuffer[0x300] = { 0 };
 	CPaintManagerUI* m_pm = (CPaintManagerUI*)lpParam;
-	CListUI* pList = static_cast<CListUI*>(m_pm->FindControl(_T("FileListDemo")));
-
+	CListUI* pFileList = static_cast<CListUI*>(m_pm->FindControl(_T("FileListDemo")));
+	CListUI* pRegeditList = static_cast<CListUI*>(m_pm->FindControl(_T("RegditListDemo")));
+	CListUI* pInterList = static_cast<CListUI*>(m_pm->FindControl(_T("InterListDemo")));
+	CListUI* pOurSelfProtectList = static_cast<CListUI*>(m_pm->FindControl(_T("OurSelfProtectListDemo")));
+	
+	DWORD dwFileListNum = 0;					//文件列表对应的行数
+	DWORD dwRegeditListNum = 0;					//注册表列表对应的行数
+	DWORD dwInterListNum = 0;					//网络列表对应的行数
+	DWORD dwOurSelfProtectListNum = 0;			//自我保护列表对应的行数
 	BYTE szTime[0x20] = { 0 };			//时间
 	BYTE szDesFileName[260] = { 0 };	//源文件路径
 	BYTE szSouFileName[260] = { 0 };	//目的文件路径
@@ -51,10 +58,8 @@ DWORD WINAPI _FileLogThread(LPVOID lpParam)
 		if (ReadFile(hFile, szBuffer, 581, &dwReadOfNum, &stOverlapped))
 		{
 			CListTextElementUI* pListElement = new CListTextElementUI;
-			pListElement->SetTag(i);
-			pList->Add(pListElement);
-
-
+			
+			
 			//解析数据
 			strncpy((char*)szTime, (char*)szBuffer, 19);
 			strcpy((char*)szDesFileName, (char*)szBuffer + 23);
@@ -62,6 +67,32 @@ DWORD WINAPI _FileLogThread(LPVOID lpParam)
 			strcpy((char*)szSouFileName, (char*)szBuffer + 311);
 			strncpy((char*)szResult, (char*)szBuffer + 575, 4);
 
+			if (!strncmp((char*)szOperate, "[文件保护]", 10))
+			{
+				pListElement->SetTag(dwFileListNum);
+				pFileList->Add(pListElement);
+				dwFileListNum++;
+
+			}
+			else if (!strncmp((char*)szOperate, "[注册保护]", 10))
+			{
+				pListElement->SetTag(dwRegeditListNum);
+				pRegeditList->Add(pListElement);
+				dwRegeditListNum++;
+			}
+			else if (!strncmp((char*)szOperate, "[网络保护]", 10))
+			{
+				pListElement->SetTag(dwInterListNum);
+				pInterList->Add(pListElement);
+				dwInterListNum++;
+			}
+			else if (!strncmp((char*)szOperate, "[自我保护]", 10))
+			{
+
+				pListElement->SetTag(dwOurSelfProtectListNum);
+				pOurSelfProtectList->Add(pListElement);
+				dwOurSelfProtectListNum++;
+			}
 			pListElement->SetText(0, (char*)szTime);
 			pListElement->SetText(1, (char*)szDesFileName);
 			pListElement->SetText(2, (char*)szOperate);
@@ -165,7 +196,7 @@ DWORD WINAPI _ProcessInterceptThread(LPVOID lpParam)
 		if (i == 1)
 		{
 			//获取驱动句柄
-			hDevice = CreateFile(TEXT("\\\\.\\360SelfProtection"), GENERIC_READ | GENERIC_WRITE, 0, 0, OPEN_EXISTING, FILE_ATTRIBUTE_SYSTEM, 0);
+			hDevice = CreateFile(TEXT("\\\\.\\HIPHookProtect"), GENERIC_READ | GENERIC_WRITE, 0, 0, OPEN_EXISTING, FILE_ATTRIBUTE_SYSTEM, 0);
 			if (hDevice == INVALID_HANDLE_VALUE)
 			{
 				return 0;

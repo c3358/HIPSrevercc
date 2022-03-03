@@ -4,7 +4,7 @@
 
 
 //文件保护日志显示
-DWORD WINAPI _FileLogThread(LPVOID lpParam);
+DWORD WINAPI _ProtectLogThread(LPVOID lpParam);
 //规则显示
 DWORD WINAPI _RuleThread(LPVOID lpParam);
 //进程拦截信息显示

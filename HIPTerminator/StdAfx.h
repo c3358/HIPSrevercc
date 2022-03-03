@@ -16,6 +16,8 @@
 #define METHOD_BUFFERED                 0
 #define FILE_ANY_ACCESS                 0
 
+
+
 #define IOCTL_BASE        0x800
 #define MY_CTL_CODE(i)                                              \
 	CTL_CODE                                                        \
@@ -29,6 +31,8 @@
 #define IOCTL_SETFILEWHITE      MY_CTL_CODE(1)						//设置文件保护名单
 #define IOCTL_GETINTERCEPTDATA  MY_CTL_CODE(2)						//获取进程拦截信息
 #define IOCTL_SETPROCESSWHITE   MY_CTL_CODE(3)						//设置进程白名单
+#define IOCTL_SETPROTECTREGDIT  MY_CTL_CODE(4)						//设置注册表保护名单
+#define IOCTL_SETOURSELFPID		MY_CTL_CODE(5)						//设置自身被保护进程PID
 
 #include <windows.h>
 #include <objbase.h>

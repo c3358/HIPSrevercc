@@ -1,0 +1,339 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="主函数">
+      <UniqueIdentifier>{5fbd88ed-26d6-417f-96c7-b4fa7be38e41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="通讯">
+      <UniqueIdentifier>{4d014a27-00f7-447f-841b-b9ca2c6efa63}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="通讯\命令">
+      <UniqueIdentifier>{36df2fa3-d2e7-4ff7-a073-fab85d381483}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="全局数据">
+      <UniqueIdentifier>{5b362f14-1b0b-493c-9904-2f5d50238b91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="IDA宏">
+      <UniqueIdentifier>{d2465e5e-c9ac-4457-8bed-48df40327573}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="列表操作">
+      <UniqueIdentifier>{2c5a8eba-0163-4600-bfe8-a0d4b71954d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="列表操作\进程白名单">
+      <UniqueIdentifier>{dacab490-8003-4711-ac12-eb9de1737a88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="列表操作\文件白名单">
+      <UniqueIdentifier>{2c220417-1c24-444e-a446-60b744de6db9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="列表操作\注册表白名单">
+      <UniqueIdentifier>{597f9c51-1b6d-4b97-8421-6fa1a1ca9c97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Filter函数">
+      <UniqueIdentifier>{64b8d3b6-da92-4446-a250-1c76605152a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Filter函数\ZwOpenFile">
+      <UniqueIdentifier>{4398a57e-6b59-4a95-ab4e-2095a55bb65d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SSDT">
+      <UniqueIdentifier>{6abd3575-b784-435d-b34f-f2e24dca73e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="通用函数">
+      <UniqueIdentifier>{8232ed4d-faa0-4606-8ba1-e025d7f9a8ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fake函数">
+      <UniqueIdentifier>{3de5da48-600f-4a77-8f71-1cf73a0daa3e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fake函数\ZwOpenFile">
+      <UniqueIdentifier>{b1abfde3-94c0-4db2-a909-2004e56ef3b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fake函数\ZwCreateFile">
+      <UniqueIdentifier>{86954f6a-d3d3-42c1-93c1-377b7c49168a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fake函数\ZwDeleteFile">
+      <UniqueIdentifier>{527a6320-d9f5-43fa-9bba-2720180b8f45}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fake函数\ZwReadFile">
+      <UniqueIdentifier>{215d5423-f814-426d-8bc7-11389f63c065}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fake函数\ZwWriteFile">
+      <UniqueIdentifier>{1c70e00d-3e6f-4571-9f78-10b5045d2b1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fake函数\ZwSetInformationFile">
+      <UniqueIdentifier>{a84913e9-f7b4-49b7-813a-3be78f71929d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fake函数\CreateProcessNotifyRoutine">
+      <UniqueIdentifier>{2019aef1-30f2-423b-b212-0b988f8b11bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fake函数\ZwOpenKey">
+      <UniqueIdentifier>{ed2f443b-a708-4b13-b076-5f1d64d0e2ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fake函数\ZwDeleteKey">
+      <UniqueIdentifier>{49ddb960-8db3-4ad7-8682-00e2eb696a00}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fake函数\ZwOpenKeyEx">
+      <UniqueIdentifier>{91caf969-d4a2-4c4d-9e72-c7790bc70a9b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fake函数\ZwDeviceIoControlFile">
+      <UniqueIdentifier>{fff9b361-e376-4c3f-940d-a60ed7f4e86c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fake函数\ZwOpenProcess">
+      <UniqueIdentifier>{470633ab-98e3-4276-ab6c-837347fbb4ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fake函数\ZwTerminateProcess">
+      <UniqueIdentifier>{58a9ddc1-99f2-493a-8932-0701afe5b63d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Filter函数\ZwCreateFile">
+      <UniqueIdentifier>{16cad0f4-e79f-41df-81de-3cf165b3bc04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Filter函数\ZwDeleteFile">
+      <UniqueIdentifier>{34c0f7f1-4f5e-4638-9f14-1a24578a39fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Filter函数\ZwReadFile">
+      <UniqueIdentifier>{c9906d46-61ea-4882-a260-9ad2b040a992}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Filter函数\ZwWriteFile">
+      <UniqueIdentifier>{01d7e9ce-3d67-43a5-ac93-4a3ad6dbbd8f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Filter函数\ZwSetInformationFile">
+      <UniqueIdentifier>{a9a5ded6-a3e2-477f-bcb7-c7e3e58f2ae6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Filter函数\ZwOpenKey">
+      <UniqueIdentifier>{7fea8151-fe64-4fe7-94aa-ddd7634ffc22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Filter函数\ZwDeleteKey">
+      <UniqueIdentifier>{e9d18739-ed89-4072-b757-f6dd2ff6a8dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Filter函数\ZwOpenKeyEx">
+      <UniqueIdentifier>{4a31b0aa-5950-4710-a19e-96419ebc8786}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Filter函数\ZwDeviceIoControlFile">
+      <UniqueIdentifier>{4b4ce7cf-0175-48b9-84f6-2478a065f2f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Filter函数\ZwOpenProcess">
+      <UniqueIdentifier>{33cf4de7-077e-47c9-9427-1a4fa011e5f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Filter函数\ZwTerminateProcess">
+      <UniqueIdentifier>{e6d163dc-e097-41af-8374-31305a6584e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Filter函数\CreateProcessNotifyRoutine">
+      <UniqueIdentifier>{5fdebdd4-e48c-4d75-9626-e17f9d57544a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DoFake">
+      <UniqueIdentifier>{2f039430-bdd3-4bee-95e9-913b428669a5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="HookProtect.c">
+      <Filter>主函数</Filter>
+    </ClCompile>
+    <ClCompile Include="Command.c">
+      <Filter>通讯\命令</Filter>
+    </ClCompile>
+    <ClCompile Include="WhiteProcessList.c">
+      <Filter>列表操作\进程白名单</Filter>
+    </ClCompile>
+    <ClCompile Include="WhiteFileList.c">
+      <Filter>列表操作\文件白名单</Filter>
+    </ClCompile>
+    <ClCompile Include="WhiteRegditList.c">
+      <Filter>列表操作\注册表白名单</Filter>
+    </ClCompile>
+    <ClCompile Include="Filter_ZwOpenFile.c">
+      <Filter>Filter函数\ZwOpenFile</Filter>
+    </ClCompile>
+    <ClCompile Include="Ssdt.c">
+      <Filter>SSDT</Filter>
+    </ClCompile>
+    <ClCompile Include="CurrencyFunc.c">
+      <Filter>通用函数</Filter>
+    </ClCompile>
+    <ClCompile Include="Fake_ZwOpenFile.c">
+      <Filter>Fake函数\ZwOpenFile</Filter>
+    </ClCompile>
+    <ClCompile Include="Fake_ZwCreateFile.c">
+      <Filter>Fake函数\ZwCreateFile</Filter>
+    </ClCompile>
+    <ClCompile Include="Filter_ZwCreateFile.c">
+      <Filter>Filter函数\ZwCreateFile</Filter>
+    </ClCompile>
+    <ClCompile Include="DoFake.c">
+      <Filter>DoFake</Filter>
+    </ClCompile>
+    <ClCompile Include="Filter_ZwDeleteFile.c">
+      <Filter>Filter函数\ZwDeleteFile</Filter>
+    </ClCompile>
+    <ClCompile Include="Filter_ZwReadFile.c">
+      <Filter>Filter函数\ZwReadFile</Filter>
+    </ClCompile>
+    <ClCompile Include="Filter_ZwWriteFIle.c">
+      <Filter>Filter函数\ZwWriteFile</Filter>
+    </ClCompile>
+    <ClCompile Include="Filter_ZwDeleteKey.c">
+      <Filter>Filter函数\ZwDeleteKey</Filter>
+    </ClCompile>
+    <ClCompile Include="Filter_ZwOpenKey.c">
+      <Filter>Filter函数\ZwOpenKey</Filter>
+    </ClCompile>
+    <ClCompile Include="Filter_ZwOpenKeyEx.c">
+      <Filter>Filter函数\ZwOpenKeyEx</Filter>
+    </ClCompile>
+    <ClCompile Include="Filter_ZwSetInformationFile.c">
+      <Filter>Filter函数\ZwSetInformationFile</Filter>
+    </ClCompile>
+    <ClCompile Include="Filter_ZwDeviceIoControlFile.c">
+      <Filter>Filter函数\ZwDeviceIoControlFile</Filter>
+    </ClCompile>
+    <ClCompile Include="Filter_ZwOpenProcess.c">
+      <Filter>Filter函数\ZwOpenProcess</Filter>
+    </ClCompile>
+    <ClCompile Include="Filter_ZwTerminateProcess.c">
+      <Filter>Filter函数\ZwTerminateProcess</Filter>
+    </ClCompile>
+    <ClCompile Include="Filter_CreateProcessNotifyRoutine.c">
+      <Filter>Filter函数\CreateProcessNotifyRoutine</Filter>
+    </ClCompile>
+    <ClCompile Include="Fake_CreateProcessNotifyRoutine.c">
+      <Filter>Fake函数\CreateProcessNotifyRoutine</Filter>
+    </ClCompile>
+    <ClCompile Include="Fake_ZwDeleteFile.c">
+      <Filter>Fake函数\ZwDeleteFile</Filter>
+    </ClCompile>
+    <ClCompile Include="Fake_ZwReadFile.c">
+      <Filter>Fake函数\ZwReadFile</Filter>
+    </ClCompile>
+    <ClCompile Include="Fake_ZwSetInformationFile.c">
+      <Filter>Fake函数\ZwSetInformationFile</Filter>
+    </ClCompile>
+    <ClCompile Include="Fake_ZwDeleteKey.c">
+      <Filter>Fake函数\ZwDeleteKey</Filter>
+    </ClCompile>
+    <ClCompile Include="Fake_ZwOpenKey.c">
+      <Filter>Fake函数\ZwOpenKey</Filter>
+    </ClCompile>
+    <ClCompile Include="Fake_ZwOpenKeyEx.c">
+      <Filter>Fake函数\ZwOpenKeyEx</Filter>
+    </ClCompile>
+    <ClCompile Include="Fake_ZwOpenProcess.c">
+      <Filter>Fake函数\ZwOpenProcess</Filter>
+    </ClCompile>
+    <ClCompile Include="Fake_ZwTerminateProcess.c">
+      <Filter>Fake函数\ZwTerminateProcess</Filter>
+    </ClCompile>
+    <ClCompile Include="Fake_ZwWriteFile.c">
+      <Filter>Fake函数\ZwWriteFile</Filter>
+    </ClCompile>
+    <ClCompile Include="Fake_ZwDeviceIoControlFile.c">
+      <Filter>Fake函数\ZwDeviceIoControlFile</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="HookProtect.h">
+      <Filter>主函数</Filter>
+    </ClInclude>
+    <ClInclude Include="Command.h">
+      <Filter>通讯\命令</Filter>
+    </ClInclude>
+    <ClInclude Include="data.h">
+      <Filter>全局数据</Filter>
+    </ClInclude>
+    <ClInclude Include="defstruct.h">
+      <Filter>IDA宏</Filter>
+    </ClInclude>
+    <ClInclude Include="WhiteProcessList.h">
+      <Filter>列表操作\进程白名单</Filter>
+    </ClInclude>
+    <ClInclude Include="WhiteFileList.h">
+      <Filter>列表操作\文件白名单</Filter>
+    </ClInclude>
+    <ClInclude Include="WhiteRegditList.h">
+      <Filter>列表操作\注册表白名单</Filter>
+    </ClInclude>
+    <ClInclude Include="Filter_ZwOpenFile.h">
+      <Filter>Filter函数\ZwOpenFile</Filter>
+    </ClInclude>
+    <ClInclude Include="Ssdt.h">
+      <Filter>SSDT</Filter>
+    </ClInclude>
+    <ClInclude Include="CurrencyFunc.h">
+      <Filter>通用函数</Filter>
+    </ClInclude>
+    <ClInclude Include="Fake_ZwOpenFile.h">
+      <Filter>Fake函数\ZwOpenFile</Filter>
+    </ClInclude>
+    <ClInclude Include="Fake_ZwCreateFile.h">
+      <Filter>Fake函数\ZwCreateFile</Filter>
+    </ClInclude>
+    <ClInclude Include="Filter_ZwCreateFile.h">
+      <Filter>Filter函数\ZwCreateFile</Filter>
+    </ClInclude>
+    <ClInclude Include="DoFake.h">
+      <Filter>DoFake</Filter>
+    </ClInclude>
+    <ClInclude Include="Filter_ZwDeleteFile.h">
+      <Filter>Filter函数\ZwDeleteFile</Filter>
+    </ClInclude>
+    <ClInclude Include="Filter_ZwReadFile.h">
+      <Filter>Filter函数\ZwReadFile</Filter>
+    </ClInclude>
+    <ClInclude Include="Filter_ZwWriteFile.h">
+      <Filter>Filter函数\ZwWriteFile</Filter>
+    </ClInclude>
+    <ClInclude Include="Filter_ZwDeleteKey.h">
+      <Filter>Filter函数\ZwDeleteKey</Filter>
+    </ClInclude>
+    <ClInclude Include="Filter_ZwOpenKey.h">
+      <Filter>Filter函数\ZwOpenKey</Filter>
+    </ClInclude>
+    <ClInclude Include="Filter_ZwOpenKeyEx.h">
+      <Filter>Filter函数\ZwOpenKeyEx</Filter>
+    </ClInclude>
+    <ClInclude Include="Filter_ZwSetInformationFile.h">
+      <Filter>Filter函数\ZwSetInformationFile</Filter>
+    </ClInclude>
+    <ClInclude Include="Filter_ZwDeviceIoControlFile.h">
+      <Filter>Filter函数\ZwDeviceIoControlFile</Filter>
+    </ClInclude>
+    <ClInclude Include="Filter_ZwOpenProcess.h">
+      <Filter>Filter函数\ZwOpenProcess</Filter>
+    </ClInclude>
+    <ClInclude Include="Filter_ZwTerminateProcess.h">
+      <Filter>Filter函数\ZwTerminateProcess</Filter>
+    </ClInclude>
+    <ClInclude Include="Filter_CreateProcessNotifyRoutine.h">
+      <Filter>Filter函数\CreateProcessNotifyRoutine</Filter>
+    </ClInclude>
+    <ClInclude Include="Fake_CreateProcessNotifyRoutine.h">
+      <Filter>Fake函数\CreateProcessNotifyRoutine</Filter>
+    </ClInclude>
+    <ClInclude Include="Fake_ZwDeleteFile.h">
+      <Filter>Fake函数\ZwDeleteFile</Filter>
+    </ClInclude>
+    <ClInclude Include="Fake_ZwReadFile.h">
+      <Filter>Fake函数\ZwReadFile</Filter>
+    </ClInclude>
+    <ClInclude Include="Fake_ZwSetInformationFile.h">
+      <Filter>Fake函数\ZwSetInformationFile</Filter>
+    </ClInclude>
+    <ClInclude Include="Fake_ZwDeleteKey.h">
+      <Filter>Fake函数\ZwDeleteKey</Filter>
+    </ClInclude>
+    <ClInclude Include="Fake_ZwOpenKey.h">
+      <Filter>Fake函数\ZwOpenKey</Filter>
+    </ClInclude>
+    <ClInclude Include="Fake_ZwOpenKeyEx.h">
+      <Filter>Fake函数\ZwOpenKeyEx</Filter>
+    </ClInclude>
+    <ClInclude Include="Fake_ZwOpenProcess.h">
+      <Filter>Fake函数\ZwOpenProcess</Filter>
+    </ClInclude>
+    <ClInclude Include="Fake_ZwTerminateProcess.h">
+      <Filter>Fake函数\ZwTerminateProcess</Filter>
+    </ClInclude>
+    <ClInclude Include="Fake_ZwWriteFile.h">
+      <Filter>Fake函数\ZwWriteFile</Filter>
+    </ClInclude>
+    <ClInclude Include="Fake_ZwDeviceIoControlFile.h">
+      <Filter>Fake函数\ZwDeviceIoControlFile</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
